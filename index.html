@@ -2,11 +2,12 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Rocket Design - Mobile Web Design Services</title>
+	<title>Rocket Design - Jakub Sagan</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />	
 	<link href="css/font-awesome.min.css" rel="stylesheet"/>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <script src="jquery-3.1.1.min.js"></script>
+    <script src="stickyfill.min.js"></script>
 </head>
 <body>
     
@@ -15,15 +16,16 @@
         <div class="header-inner">
         
             
-           <a href="index.html" id="logo"> </a>
+           <a href="#" id="logo"> </a>
             
             <nav>
                 
                 <a href="#" id="menu-icon"></a>
                 
                 <ul>
-                    <li> <a href="index.html" class="current">Home</a></li>
-                    <li><a href="#about"> About</a></li>
+                    
+                    <li> <a href="#home">Home</a></li>
+                    <li><a href="#html"> About</a></li>
                     <li> <a href="#services"> Services</a></li>
                     <li> <a href="#contact"> Contact</a></li>
                 
@@ -46,7 +48,7 @@
     <!------ END OF MY HEADER ------>
     
      
-    <section class="banner">
+    <section class="banner" id="home">
         
         <div class="banner-inner">
         
@@ -57,6 +59,7 @@
     </section>
     <!------ END OF BANNER SECTION ------>
         
+    
         <section class="one-fourth" id="html">
             <i class="fa fa-html5"> </i>
        
@@ -139,7 +142,7 @@
     <section class="inner-wrapper">
         <article class="desktop">
                 
-        <img src="img/desktop.png" alt="responsywny ekran komputera">
+        <img  class="desktop-image" src="img/desktop.png" alt="responsywny ekran komputera">
         
         </article>
         
@@ -157,7 +160,7 @@
     </section>
 <!-- END OF 3 row section -->
     
-    <section class="inner-wrapper-3">
+    <section class="inner-wrapper-3" id="services">
         
     <section class="one-third small-caps" id="user">
         <div class="transbox1">
@@ -194,10 +197,14 @@
     </section>
     
     
+        
+        
+       
+    
     <!-- END OF 1 ROW section-->
     
     
-    <section class="contact">
+    <section class="contact" id="contact">
     
         <button type="button" class="button" > Formularz kontaktowy</button>
        
@@ -240,55 +247,72 @@
         
         
         
-        <script> 
-    $("#tablet").click(function() {
-        if($(this).hasClass("clicked")){
-            $(this).removeClass("clicked");
-            $('#tablet2').fadeOut();
-              $('#tablet').animate({left: '30%'});
-        }else{
-            $(this).addClass("clicked");
-        
-    $('#tablet2').fadeIn();
-        
-            $("#tablet").animate({left: "0px"});
-        }
-        
-    });
-        
-        
-        $('.mobile2').click(function() {
-        if($(this).hasClass("clicked")){
-            $(this).removeClass("clicked");
-            $('.mobile').fadeOut();
-              $('.mobile2').animate({right: '20%'});
-        }else{
+ 
             
-            $('.mobile2').addClass("clicked");
-        
-    $('.mobile').fadeIn();
-        
-            $('.mobile2').animate({right: "0px"});
-        }
-        
-    });
-        
-            $('.desktop').click(function() {
-        if($(this).hasClass("click")){
-            $(this).removeClass("click");
-            $('.desktop2').fadeOut();
-            $('.desktop').animate({left: '30%'});
-        }else{
             
-    $(this).addClass("click");
-    $('.desktop2').fadeIn();
-    $('.desktop').animate({left: "0px"});
-        }
+
         
-    });
+        
+        <div class="lightbox">
             
-</script>
+            <link href='http://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+            
+<div id="content">
+    <button type="submit" class="submit-button" > <i class="fa fa-times" aria-hidden="true"></i> </button>
+    <h3>Kontakt</h3>
+    <form action=" " method="post" autocomplete="on">
         
+            <label for="username" class="icon-user"> Imię/Firma
+                <span class="required">*</span>
+            </label>
+            <input type="text" name="username" id="username" required="required" placeholder="Twoje dane" />
+        
+
+        
+            <label for="usermail" class="icon-envelope"> E-mail
+                <span class="required">*</span>
+            </label>
+            <input type="email" name="usermail" id="usermail" placeholder="Podaj e-mail" required="required" />
+        
+
+
+
+        
+            <label for="subject" class="icon-bullhorn"> Temat</label>
+            <input type="text" name="subject" id="subject" placeholder="O czym chcesz porozmawiać?" />
+        
+
+        
+            <label for="message" class="icon-comment"> Wiadomość
+                <span class="required">*</span>
+            </label>
+            <textarea placeholder="Napisz do mnie a ja odpowiem Ci jak tylko będę mógł" required="required"></textarea>
+        
+        <p class="indication">Pola z gwiazdką
+            <span class="required"> * </span>są obowiązkowe</p>
+
+        <input type="submit" class="send" value=" Wyślij wiadomość ! " />
+
+    </form>
+</div>
+            
+            
+            
+        
+                <div class="lightbox-container">
+            
+            
+                    
+                   
+                    
+                    
+                </div>
+        
+        
+        </div>
+    
+    <script src="script.js"> </script>
         
 </body>
 </html>
